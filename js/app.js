@@ -20,7 +20,8 @@ var y = d3.scale.linear()
 
 var xAxis = d3.svg.axis()
     .scale(x)
-    .orient("bottom");
+    .orient("bottom")
+    .ticks(d3.time.years, 2);
 
 
 var yAxis = d3.svg.axis()
@@ -33,7 +34,7 @@ var tip = d3.tip()
     .html(function (d) {
         return "<div><div><strong><h4>$" + d[1] + " Billion</h4></strong></div>" +
             "<div><h6>" + d[0] + "</h6></div></div>";
-    })
+    });
 
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -84,11 +85,4 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
         })
         .on('mouseover', tip.show)
         .on('mouseout', tip.hide)
-
-
 });
-
-function type(d) {
-    d[1] = +d[1];
-    return d;
-}
