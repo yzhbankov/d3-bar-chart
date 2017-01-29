@@ -1,5 +1,20 @@
 body {
-    font: 10px sans-serif;
+    font: 15px sans-serif;
+    background-color: ghostwhite;
+}
+
+svg {
+    background-color: white;
+}
+
+.title {
+    font-size: 30px;
+    text-align: center;
+}
+
+.bar-chart {
+    text-align: center;
+    margin-top: 100px;
 }
 
 .axis path,
@@ -30,7 +45,6 @@ body {
     border-radius: 2px;
 }
 
-/* Creates a small triangle extender for the tooltip */
 .d3-tip:after {
     box-sizing: border-box;
     display: inline;
@@ -43,7 +57,6 @@ body {
     text-align: center;
 }
 
-/* Style northward tooltips differently */
 .d3-tip.n:after {
     margin: -1px 0 0 0;
     top: 100%;
